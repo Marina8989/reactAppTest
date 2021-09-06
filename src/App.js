@@ -1,81 +1,34 @@
 import React from 'react';
-import {FiDelete} from 'react-icons/fi';
-import {FaPencilAlt} from 'react-icons/fa';
+import Title from './components/Title';
+import Photo from './components/PhotoGallery';
 
-const Item = (props) => {
-     return (
-            <li className="list" >
-            {props.item.value} 
-            <div className="list-icons">
-                <FaPencilAlt onClick={props.handleUpdate}/>
-                <FiDelete className="icon" onClick={() => props.handleRemove(props.item)}/>
-            </div>
-            </li>
-     )
-}
-const List = (props) => {
-    return (
-        <ul>
-          {props.list.map(item => (<Item key={item} item={item} handleRemove={props.handleRemove} handleUpdate={props.handleUpdate}/>))}
-        </ul>
-    )
-}
-class Form extends React.Component {
-    state={
-        inputValue: ""
-    }
-    handleChange = (e) => {
-        this.setState({inputValue: e.target.value});
-    }
-    handleSubmit = (e) => {
-       e.preventDefault();
-       const value = this.state.inputValue;
-       this.setState({inputValue: ""});
-       this.props.handleSubmit(value);
-    }
-    handleUpdate = (e) => {
-        this.setState({inputValue: e.target.value});
-    }
-    render(){
-        return(
-           <form onSubmit={this.handleSubmit}>
-               <input type="text" placeholder="Add todo..."  value={this.state.inputValue} onChange={this.handleChange} handleUpdate={this.handleUpdate}/>
-           </form>
-        )
-    }
-}
-function randNum() {
-    return (Math.floor(Math.random() * 200) + Math.floor(Math.random() * 900))
-}
+const posts = [
+    {
+    id: 1,
+    description: 'Post 1',
+    imageLink: 'http://prod-upp-image-read.ft.com/a4e8f394-313b-11ea-a329-0bcf87a328f2'
+  },
+  {
+    id: 2,
+    description: 'Post 2',
+    imageLink: 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ig1b9f2_rbi8/v1/1000x-1.jpg'
+  },
+  {
+    id: 3,
+    description: 'Post 3',
+    imageLink: 'https://images.squarespace-cdn.com/content/v1/58ed40453a04116f46e8d99b/1570789004053-Y75X6Y3J68PFOY1W0NW4/ElectricCar.jpg?format=1500w'
+  },
+]
 
 class App extends React.Component{
-    state={
-        list: []
-    }
-    handleSubmit = (value) => {
-        const item ={
-            id: randNum(),
-            value,
-            finished: false
-        }
-        const newList = [...this.state.list, item];
-        this.setState({list: newList});
-    }
-    handleRemove = (item) => {
-       const newList = this.state.list.filter(element => item.id !== element.id);
-       this.setState({list: newList});
-    }
-    
     render(){
         return(
             <div>
-               <Form handleSubmit={this.handleSubmit} handleUpdate={this.handleUpdate}/>
-               <h3 className="header">{this.state.list.length > 0 ? this.state.list.length : ''} Todos</h3>
-               <List list={this.state.list} handleRemove={this.handleRemove} />
+              <Title title={'Title of the App'} />
+              <Photo posts={posts} />
             </div>
         )
     }
 }
-
 
 export default App
