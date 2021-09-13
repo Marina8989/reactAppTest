@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = () => {
+const Button = (props) => {
    return (
-       <button>Click</button>
+       <button>{props.text}</button>
    )
 }
 
@@ -11,6 +11,7 @@ const Header = (props) => {
       <div>
         <h2>{props.name}</h2>
         <h5>{props.number}</h5>
+        <Button text={props.buttonText}/>
       </div>  
    )
 }
@@ -19,8 +20,8 @@ class App extends React.Component{
         return(
            <> 
             <h2>React Test</h2>
-            <Header name={'Marina'} number={32}/>
-            <Button />
+            <Header name={'Marina'} number={32} buttonText={'Log In'}/>
+            <Header name={'Albert'} number={35} buttonText={'Log Out'}/>
            </>
         )
     }
