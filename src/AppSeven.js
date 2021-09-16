@@ -18,6 +18,11 @@ const List = (props) => {
     )
 }
 
+const Search = (props) => {
+   return(
+       <input value={props.searchInput} onChange={props.handleSearch} />
+   )
+}
 class Form extends React.Component{
     state={
         inputValue: ''
@@ -42,7 +47,8 @@ class Form extends React.Component{
 
 class AppSeven extends React.Component{
     state={
-        list: []
+        list: [],
+        searchInput: ''
     }
     handleSubmit = (value) => {
         const item = {
@@ -69,15 +75,20 @@ class AppSeven extends React.Component{
        this.setState({list: newList});
        localStorage.setItem('list', JSON.stringify(newList));
     }
+    handleSearch = (e) => {
+        this.setState({searchInput: e.target.value})
+    }
     componentDidMount() {
         const list = JSON.parse(localStorage.getItem('list')) || [];
         this.setState({list});
     }
     render() {
+        const newList = this.state.list.filter(elem => elem.value.includes(this.state.searchInput));
         return (
             <div>
                 <Form handleSubmit={this.handleSubmit}/>
-                <List list={this.state.list} handleToggle={this.handleToggle} handleRemove={this.handleRemove}/>
+                <Search handleSearch={this.handleSearch} />
+                <List list={newList} handleToggle={this.handleToggle} handleRemove={this.handleRemove}/>
             </div>
         )
     }
