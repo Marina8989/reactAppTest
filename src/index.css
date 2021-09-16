@@ -8,3 +8,6 @@ button{
 input {
     border: 1px solid green;
 }
+.space{
+    margin: .6rem 0;
+}
