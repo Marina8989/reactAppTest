@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom';
 //import AppFour from './AppFour';
 //import AppFive from './AppFive';
 //import AppSix from './AppSix';
-import AppSeven from './AppSeven';
+//import AppSeven from './AppSeven';
+import AppFetch from './AppFetch'
 import './index.css';
 
-ReactDOM.render(<AppSeven />, document.getElementById('root'));
+ReactDOM.render(<AppFetch />, document.getElementById('root'));
