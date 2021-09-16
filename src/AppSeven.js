@@ -8,8 +8,9 @@ const Item = (props) => {
           <button onClick={() => props.handleToggle(props.item)}>toggle</button>
           <button onClick={() => props.handleRemove(props.item)}>remove</button>
           <div className="space">
-            <button onClick={() => props.handleIncrement(props.item)}>increment</button>
+            <button onClick={() => props.handleDecrement(props.item)}>decrement</button>
             <span style={{color: 'green'}}>{props.item.priority}</span>
+            <button onClick={() => props.handleIncrement(props.item)}>increment</button>
           </div>  
         </li>
     )
@@ -18,7 +19,7 @@ const Item = (props) => {
 const List = (props) => {
     return(
         <ul>
-            {props.list.map(item => <Item key={item.id} item={item} handleToggle={props.handleToggle} handleRemove={props.handleRemove} handleIncrement={props.handleIncrement}/>)}
+            {props.list.map(item => <Item key={item.id} item={item} handleToggle={props.handleToggle} handleRemove={props.handleRemove} handleIncrement={props.handleIncrement} handleDecrement={props.handleDecrement} />)}
         </ul>
     )
 }
@@ -53,7 +54,8 @@ class Form extends React.Component{
 class AppSeven extends React.Component{
     state={
         list: [],
-        searchInput: ''
+        searchInput: '',
+        sorted: false
     }
     handleSubmit = (value) => {
         const item = {
@@ -94,17 +96,33 @@ class AppSeven extends React.Component{
          this.setState({list: newList})
          localStorage.setItem('list', JSON.stringify(newList))
     }
+    handleDecrement = (item) => {
+      const newList = this.state.list.map(el => {
+          if(el.id === item.id) {
+            el.priority-=1;
+          }
+          return el;
+      })
+      this.setState({list: newList});
+      localStorage.setItem('list', JSON.stringify(newList));
+    }
+    handleSort = () => {
+       this.setState({sorted: !this.state.sorted})
+    }
     componentDidMount() {
         const list = JSON.parse(localStorage.getItem('list')) || [];
         this.setState({list});
     }
     render() {
-        const newList = this.state.list.filter(elem => elem.value.includes(this.state.searchInput));
+        const newList = this.state.list.filter(elem => elem.value.includes(this.state.searchInput)).sort((a,b) => {
+            return this.state.sorted ? a.priority - b.priority : b.priority - a.priority;
+        })
         return (
             <div>
                 <Form handleSubmit={this.handleSubmit}/>
                 <Search handleSearch={this.handleSearch} />
-                <List list={newList} handleToggle={this.handleToggle} handleRemove={this.handleRemove} handleIncrement={this.handleIncrement}/>
+                <List list={newList} handleToggle={this.handleToggle} handleRemove={this.handleRemove} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement}/>
+                {this.state.list.length > 0 && <button onClick={this.handleSort}>sort</button>}
             </div>
         )
     }
