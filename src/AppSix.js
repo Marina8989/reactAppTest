@@ -8,7 +8,7 @@ const Counter = (props) => {
              return(
                  <>
                   <h4 key={id}>{value}</h4>
-                  <button onClick={() => props.handleIncrement(item.id)}>increment by {item.incrementor}</button>
+                  <button onClick={() => props.handleIncrement(item.id)}>increment by {incrementor}</button>
                  </>
              )
          })}

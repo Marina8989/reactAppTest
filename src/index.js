@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 //import AppThree from './AppThree';
 //import AppFour from './AppFour';
 //import AppFive from './AppFive';
-import AppSix from './AppSix'
+//import AppSix from './AppSix';
+import AppSeven from './AppSeven';
 import './index.css';
 
-ReactDOM.render(<AppSix />, document.getElementById('root'));
+ReactDOM.render(<AppSeven />, document.getElementById('root'));
