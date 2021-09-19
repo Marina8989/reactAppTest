@@ -5,23 +5,40 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import styled from 'styled-components';
 
-export default function App() {
+const StyledLink = styled(Link)`
+    color: red;
+    &:hover {
+      color: green;
+    }
+`
+const ListOrdered = styled.ul`
+     display: flex;
+     justify-content: space-between;
+`
+const ListElement = styled.li`
+     list-style: none;
+`
+
+
+
+export default function AppRouter() {
   return (
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
+          <ListOrdered>
+            <ListElement>
+              <StyledLink to="/">Home</StyledLink>
+            </ListElement>
+            <ListElement>
+              <StyledLink to="/about">About</StyledLink>
+            </ListElement>
+            <ListElement>
+              <StyledLink to="/users">Users</StyledLink>
+            </ListElement>
+          </ListOrdered>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
