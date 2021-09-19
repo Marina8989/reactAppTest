@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import About from './pages/About';
+import User from './pages/User';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
@@ -32,12 +34,15 @@ export default function AppRouter() {
             <ListElement>
               <StyledLink to="/">Home</StyledLink>
             </ListElement>
-            <ListElement>
-              <StyledLink to="/about">About</StyledLink>
-            </ListElement>
-            <ListElement>
-              <StyledLink to="/users">Users</StyledLink>
-            </ListElement>
+            <li>
+                <StyledLink to="/user/facebook">facebook</StyledLink>
+            </li>
+             <li>
+                <StyledLink to="/user/mozilla">mozilla</StyledLink>
+            </li>
+            <li>
+                <StyledLink to="/user/target">target</StyledLink>
+            </li>
           </ListOrdered>
         </nav>
 
@@ -47,26 +52,21 @@ export default function AppRouter() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/user/:id" component={User} />
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
+// function Home() {
+//   return <h2>Home</h2>;
+// }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function About() {
+//   return <h2>About</h2>;
+// }
 
-function Users() {
-  return <h2>Users</h2>;
-}
+// function Users() {
+//   return <h2>Users</h2>;
+// }
