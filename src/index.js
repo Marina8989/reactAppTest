@@ -8,7 +8,8 @@ import ReactDOM from 'react-dom';
 //import AppSix from './AppSix';
 //import AppSeven from './AppSeven';
 //import AppFetch from './AppFetch';
-import AppTen from './AppTen';
+//import AppTen from './AppTen';
+import AppTest from './AppTest';
 import './index.css';
 
-ReactDOM.render(<AppTen />, document.getElementById('root'));
+ReactDOM.render(<AppTest />, document.getElementById('root'));
