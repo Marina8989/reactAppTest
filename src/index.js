@@ -9,7 +9,8 @@ import ReactDOM from 'react-dom';
 //import AppSeven from './AppSeven';
 //import AppFetch from './AppFetch';
 //import AppTen from './AppTen';
-import AppTest from './AppTest';
+//import AppTest from './AppTest';
+import AppObj from './AppObj';
 import './index.css';
 
-ReactDOM.render(<AppTest />, document.getElementById('root'));
+ReactDOM.render(<AppObj />, document.getElementById('root'));
