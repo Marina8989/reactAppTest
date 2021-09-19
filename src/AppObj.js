@@ -2,10 +2,13 @@ import React from 'react';
 
 class AppObj extends React.Component{
     state={
-        firstName: 'John',
-        lastName: 'Doe',
-        password: '12345',
-        email: 'john@email.com'
+        firstName: {value: 'John', required: true},
+        lastName: {value: 'Doe', required: true},
+        password: {value: '12345', required: true},
+        email: {value: 'john@email.com', required: true}
+    }
+    handleChange = (e) => {
+       this.setState({[e.target.name]: {...this.state[e.target.name], value: e.target.value}})
     }
     render() {
         return(
@@ -13,8 +16,7 @@ class AppObj extends React.Component{
             {Object.keys(this.state).map(key => {
                 return (
                     <>
-                    console.log({this.state[key]})
-                    <input value={this.state[key]} />
+                      <input name={key} value={this.state[key].value} onChange={this.handleChange}/>
                     </>
                 )
             })}
