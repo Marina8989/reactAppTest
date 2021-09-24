@@ -1,50 +1,62 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Title = (props) => {
-   return(
-      <h1>{props.title}</h1>
-   )
-}
-const Text = (props) => {
-   return(
-      <h6>{props.text}</h6>
-   )
-}
+const Input = styled.input`
+    border: 1px solid green;
+    margin: .5rem 0;
+`
+const Container = styled.div`
+    margin: auto;
+    text-align: center;
+`
 
-const InputBox = (props) => {
-    return (
-       <input type="text" placeholder={props.placeholder} style={{border: '1px solid lightblue', borderRadius: '3px', margin: '.2rem 0'}}/>
-    )
-}
-
-const CheckBox = () => {
-    return(
-       <>
-         <input type="checkbox" id="check" name="check" style={{margin: '.5rem .2rem'}}/>
-         <label htmlFor="check">I agree to the Terms and Privacy Policy</label>
-       </>
-    )
-}
-
-const Sign = (props) => {
-   return (
-      <button style={{color: 'green'}}>{props.btnText}</button>
-   )
-}
-class App extends React.Component{
+class Form extends React.Component{
+    state={
+        inputValue: ''
+    }
+    handleChange = (e) => {
+      this.setState({inputValue: e.target.value})
+    }
+    handleSubmit = (e) => {
+      e.preventDefault();
+      this.props.handleSubmit(this.state.inputValue);
+      this.setState({inputValue: ''});
+    }
     render(){
         return(
-           <div style={{textAlign: 'center', margin: 'auto'}}> 
-            <Title title={'Create Account'} />
-            <h6 style={{ margin: 'auto', border: '1px solid lightblue', borderRadius: '2px', width: '120px'}}>one two three four</h6>
-            <Text  text={'or use email for credentials'}/>
-            <InputBox placeholder={'Name'} /><br />
-            <InputBox placeholder={'Email'} /><br />
-            <InputBox placeholder={'Password'} /><br />
-            <CheckBox /><br />
-            <Sign btnText={'Sign Up'} />
-            <Sign btnText={'Sign In'} />
-           </div>
+            <form onSubmit={this.handleSubmit}>
+                <Input value={this.state.inputValue} onChange={this.handleChange} />
+            </form>
+        )
+    }
+}
+
+class App extends React.Component{
+    state={
+        list: []
+    }
+    handleSubmit = (value) => {
+        const item = {
+            id: `${Math.random() * 20}`,
+            value
+        }
+        const newList = [...this.state.list, item];
+        this.setState({list: newList});
+    }
+    render() {
+        return(
+            <Container>
+              <h3>ToDo List</h3>
+              <Form handleSubmit={this.handleSubmit}/>
+              {this.state.list.map(item => {
+                  const {id, value} = item
+                  return(
+                      <div>
+                        <h5 key={id}>{value}</h5>
+                      </div>
+                  )
+              })}
+            </Container>
         )
     }
 }
