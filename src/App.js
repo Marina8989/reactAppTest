@@ -31,6 +31,12 @@ class Form extends React.Component{
     }
 }
 
+const Button = (props) => {
+    return(
+        <button onClick={() => props.handleClick(props.item)}>{props.title}</button>
+    )
+}
+
 class App extends React.Component{
     state={
         list: []
@@ -38,12 +44,23 @@ class App extends React.Component{
     handleSubmit = (value) => {
         const item = {
             id: `${Math.random() * 20}`,
-            value
+            value,
+            toggle: false
         }
         const newList = [...this.state.list, item];
         this.setState({list: newList});
     }
+    handleClick = (item) => {
+      const newList = this.state.list.map(el => {
+          if(el === item) {
+             el.toggle = !el.toggle;
+          }
+          return el;
+      })
+      this.setState({list: newList});
+    }
     render() {
+        console.log(this.state.list)
         return(
             <Container>
               <h3>ToDo List</h3>
@@ -52,7 +69,8 @@ class App extends React.Component{
                   const {id, value} = item
                   return(
                       <div>
-                        <h5 key={id}>{value}</h5>
+                        <h5 key={id} className={this.state.list.toggle ? 'toggle' : ''}>{value}</h5>
+                        <Button title="toggle" handleClick={this.handleClick}/>
                       </div>
                   )
               })}
