@@ -5,14 +5,39 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-   width: 80%;
-   border: 1px solid red;
+   width: 90%;
+   ${'' /* border: 1px solid red; */}
    margin: auto;
    background: rgb(2,14,3);
+   border-radius: 10px;
+   padding: 2rem 1rem;
+   margin-top: 2rem;
 `
 const StyledLink = styled(Link)`
    text-decoration: none;
+   color: white;
 `
+
+const StyledCoinList = styled(Link)`
+    background: rgb(37, 37, 37);
+    padding: .5rem 1rem;
+    margin-right: 1.3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+`
+const StyledH = styled.h2`
+    font-size: 12px;
+    margin-top: 4rem;
+    padding-top: .5rem;
+    padding-left: .7rem;
+`
+
+const StyledInnerDiv = styled.div`
+   background: rgb(37, 37, 37);
+   border-radius: 10px;
+`
+
 class CoinList extends React.Component{
     state={
         coins: []
@@ -33,13 +58,15 @@ class CoinList extends React.Component{
         console.log(this.state.coins)
       return (
           <StyledDiv>
-           <Link to='/'>CoinList</Link><br/>
-           <Link to='/portfolio'>Portfolio</Link><br/>
-           <h2>Your overview</h2>
+           <StyledCoinList to='/'>Coins</StyledCoinList>
+           <StyledLink to='/portfolio'>Portfolio</StyledLink>
+          <StyledInnerDiv>
+           <StyledH>Your overview</StyledH>
            <StyledLink to='/coinPage'>
              <Table coins={this.state.coins}/>
-           </StyledLink><br/>
+           </StyledLink>
            {/* <Table coins={this.state.coins}/> */}
+          </StyledInnerDiv>
           </StyledDiv>
       ) 
     }

@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(to bottom right, rgb(10, 56, 10), black);
+    background: linear-gradient(to bottom right, rgb(7, 41, 7), black);
     min-width: 100vw;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    
 }
