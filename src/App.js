@@ -1,28 +1,28 @@
 import React from 'react';
 import CoinList from './pages/CoinList';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import './index.css';
+//import styled from 'styled-components';
+
 
 class App extends React.Component{
     render(){
         return(
            <Router>
-               <div className='container'>
+               {/* <div className='container'>
                    <Link to='/'>CoinList</Link><br/>
-                   <Link to='/about'>About</Link><br/>
-                   <Link to='/dashboard'>Dashboard</Link><br/>
-               </div>
-            
-              <hr />
-
+                   <Link to='/portfolio'>Portfolio</Link><br/>
+                   <Link to='/coinPage'>CoinPage</Link><br/>
+               </div> */}
               <Switch>
                  <Route path='/' exact>
                     <CoinList />
                  </Route>
-                 <Route path='/about' exact>
-                    <About />
+                 <Route path='/portfolio' exact>
+                    <Portfolio />
                  </Route>
-                 <Route path='/dashboard' exact>
-                     <Dashboard />
+                 <Route path='/coinPage' exact>
+                     <CoinPage />
                  </Route>
               </Switch>
 
@@ -34,10 +34,10 @@ class App extends React.Component{
 export default App
 
 
-function About() {
-    return 'About mi vida';
+function Portfolio() {
+    return 'Portfolio';
 }
 
-function Dashboard() {
-    return 'Como se dice dashboard en Espanol?';
+function CoinPage() {
+    return 'CoinPage describe';
 }
