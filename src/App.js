@@ -1,4 +1,5 @@
 import React from 'react';
+import CoinList from './pages/CoinList';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class App extends React.Component{
@@ -6,7 +7,7 @@ class App extends React.Component{
         return(
            <Router>
                <div className='container'>
-                   <Link to='/'>Home</Link><br/>
+                   <Link to='/'>CoinList</Link><br/>
                    <Link to='/about'>About</Link><br/>
                    <Link to='/dashboard'>Dashboard</Link><br/>
                </div>
@@ -15,7 +16,7 @@ class App extends React.Component{
 
               <Switch>
                  <Route path='/' exact>
-                    <Home />
+                    <CoinList />
                  </Route>
                  <Route path='/about' exact>
                     <About />
@@ -32,9 +33,6 @@ class App extends React.Component{
 
 export default App
 
-function Home() {
-    return 'HOME SWEET HOME';
-}
 
 function About() {
     return 'About mi vida';
