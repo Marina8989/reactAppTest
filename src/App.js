@@ -12,12 +12,12 @@ class App extends React.Component{
     }
     handleRead = (item) => {
        const newList = this.state.list.map(el => {
-           if(el.id === item.id){
+           if(el.id === item.id) {
              el.isLoading = !el.isLoading;
            }
            return el;
        })
-       this.setState({list: newList})
+       this.setState({list: newList});
     }
     render(){
         return(
