@@ -12,7 +12,7 @@ const data = [
         price: '$3,495',
         isLoading: false,
         text: 'Madrid is a beautiful place to visit. fsdjfsgryufksgj sdfksjks ksdfksjdkf kdjfksfjsf sdkfjksfjskjfjs jsshjhd sdjfsdj sdjfksfksf kdsfjksd kjfjkjsdf sdkfjskdjf skdjfksf fkdsjfk kdjfksdjf dskfjs sdfjksj kdfjsk kjsdfksjf ksjfksjfl kfjkdjs kdjf kjdsfkjs kdfjksjf fksdfjs sdkfjsk sdkfjksd fjkksksks ksdjfkf skfjsk skdfjksf skdfjksj ksjdfkjf skdjfksjd skjkdfj'
-    },
+    }, 
     {
         id: 3,
         name: 'Best Of Tokyo In 7 Days Tour',
