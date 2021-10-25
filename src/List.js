@@ -1,14 +1,14 @@
 import React from 'react';
 
-const List = ({people}) => {
+const List = (props) => {
    return(
       <>
-       {people.map(person => {
-           const {id, name, job} = person
+       {props.list.map(city => {
            return(
-               <div key={id}>
-                   <h4>{name}</h4>
-                   <h5>{job}</h5>
+               <div key={city.id} className='info'>
+                   <h3>{city.name} <span>{city.price}</span></h3>
+                   <h5>{city.text}</h5>
+                   <button onClick={() => props.handleClear(city)}>Clear</button>
                </div>
            )
        })}

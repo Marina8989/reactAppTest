@@ -3,18 +3,20 @@ import List from './List';
 import data from './data';
 
 class App extends React.Component{
-    state = {
-        people: data
+    state= {
+        list: data,
+        isLoading: false
     }
-    handleClick = () => {
-        this.setState({people: []})
+    handleClear = (item) => {
+       const newList = this.state.list.filter(el => el.id !== item.id)
+       this.setState({list: newList})
     }
     render(){
+        console.log(this.state.list)
         return(
-            <div>
-               <h4> {this.state.people.length} birthdays today</h4>
-               <List people={this.state.people}/>
-               <button onClick={this.handleClick}>Clear All</button>
+            <div className='body'>
+               <h4 className='header'>Our Tours</h4>
+               <List list={this.state.list} handleClear={this.handleClear}/>
             </div>
         )
     }
