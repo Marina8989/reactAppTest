@@ -4,26 +4,23 @@
     box-sizing: border-box;
 }
 .container{
+    margin: auto;
     border: 1px solid green;
     width: 80%;
-    margin: auto;
+    text-align: center;
+    padding: 1rem .5rem;
+}
+.border-bottom{
+    width: 50px;
+    height: 3px;
+    background: green;
+    margin: .4rem auto;
+}
+.category{
     display: flex;
-    padding: 1rem
-    
-}
-.container h2{
-    padding: 1rem 5rem 1rem 2rem;
-    line-height: 1.4;
-}
-.lists{
-    padding: .5rem 0;
-}
-.items{
-    display: flex;
+    justify-content: space-evenly;
+    padding: .9rem 0;
 }
 button{
-    width: 15px;
-    height: 20px;
-    margin-top: 5px;
-    margin-left: 20px;
+    cursor: pointer;
 }
