@@ -1,17 +1,34 @@
 import React from 'react';
-import List from './List';
+import Item from './Item';
 import data from './data';
+import './index.css';
 
 class App extends React.Component{
-    state= {
-        list: data
+    state={
+      list: data,
+      on: false
     }
-
-    render(){
+    handleClick = (item) => {
+        console.log(item)
+      const newList = this.state.list.map(el => {
+          if(el.id === item.id) {
+              el.on = !el.on;
+          }
+          return el
+      })
+      this.setState({list: newList})
+      console.log(this.state.list)
+    }
+    render() {
         return(
-           <List list={this.state.list} />
+            <div className='container'>
+                <h2>Questions And <br /> Answers About <br /> Login</h2>
+                <div>
+                  <Item list={this.state.list} handleClick={this.handleClick}/>
+                </div>
+            </div>
         )
     }
 }
 
-export default App;
+export default App
