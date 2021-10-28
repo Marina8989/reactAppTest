@@ -3,7 +3,7 @@ import React from 'react';
 const Category = (props) => {
    return(
        <>
-        <button>{props.category}</button>
+        <button>{props.text}</button>
        </>
    )
 }
