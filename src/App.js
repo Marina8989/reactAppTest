@@ -17,6 +17,8 @@ class App extends React.Component{
         console.log(newCategory)
         return(
             <>
+              <h2>Our Menu</h2>
+              <div className='border-bottom'></div>
               <Menu newCategory={newCategory} filterItem={this.filterItem}/>
               <Category items={this.state.items} />
             </>

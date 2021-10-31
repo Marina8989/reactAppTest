@@ -29,6 +29,16 @@ button{
     margin: auto;
     text-align: center;
 }
+
 .menu{
-    display: flex;
+    display: inline;
+    padding: 1rem;
+}
+.menu-items{
+    margin: 1rem auto;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    margin: 1rem;
 }

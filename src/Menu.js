@@ -3,7 +3,7 @@ import React from 'react';
 const Menu = ({newCategory}) => {
     console.log(newCategory)
     return(
-        <>
+        <div className='menu-items'>
           {newCategory.map((category, index) => {
               return(
                 <div className='menu'>
@@ -11,7 +11,7 @@ const Menu = ({newCategory}) => {
                 </div>
               )
           })}
-        </>
+        </div>
     )
 }
 
