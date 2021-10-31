@@ -8,6 +8,7 @@ const Item = (props) => {
             return(
                 <div key={id} className='item'>
                     <h3>{name} <span>{price}</span></h3>
+                    <h5>{desc}</h5>
                 </div>
             )
         })}

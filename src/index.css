@@ -25,6 +25,7 @@ button{
     cursor: pointer;
 }
 .item{
-    display: flex;
-    flex-direction: column;
+    padding: 1rem 0;
+    margin: auto;
+    text-align: center;
 }
