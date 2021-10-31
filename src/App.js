@@ -13,8 +13,15 @@ class App extends React.Component{
     state={
         items: data
     }
+    filterItem = (category) => {
+      if(category === 'All') {
+        this.setState({items: data})
+        return
+      }
+        const newList = this.state.items.filter(item => item.category === category)
+        this.setState({items: newList})
+    }
     render() {
-        console.log(newCategory)
         return(
             <>
               <h2>Our Menu</h2>
