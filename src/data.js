@@ -27,5 +27,19 @@ const data = [
         price: '$34.99',
         desc: 'description # 4'
     },
+     {
+        id: 5,
+        category: 'Dinner',
+        name: 'Item 4',
+        price: '$55.99',
+        desc: 'description # 4'
+    },
+     {
+        id: 6,
+        category: 'Lunch',
+        name: 'Item 6',
+        price: '$16.99',
+        desc: 'description # 6'
+    },
 ]
 export default data;

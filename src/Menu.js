@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Menu = (props) => {
+const Menu = ({newCategory}) => {
+    console.log(newCategory)
     return(
         <>
-          {props.items.map((item, index) => {
-              <button key={index}>{item.category}</button>
+          {newCategory.map((category, index) => {
+              return(
+                <div className='menu'>
+                  <button key={index}>{category}</button>
+                </div>
+              )
           })}
         </>
     )
