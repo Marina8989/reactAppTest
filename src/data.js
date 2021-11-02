@@ -17,7 +17,7 @@ const data = [
         title: 'Full Stack Engineer',
         dates: 'May 2015 - December 2015',
         duties: [
-            'Totdhe fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
+            'Teoqeqorqr fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
             'Fsdhhf sjfhs dfgj sfjsjsf skfjskj ksjfsfj sjfkj ksjfds kjfsk ksjsj sdfj',
             'sd jdae jjad akdjakfjut ijeriru surwunfs sfjsdj skdjweri smfsf ksjfsfjjf'
         ],
@@ -29,7 +29,7 @@ const data = [
         title: 'Engineering Intern',
         dates: 'May 2014 - September 2015',
         duties: [
-            'Totdhe fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
+            'sjfhh fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
             'Fsdhhf sjfhs dfgj sfjsjsf skfjskj ksjfsfj sjfkj ksjfds kjfsk ksjsj sdfj',
             'sd jdae jjad akdjakfjut ijeriru surwunfs sfjsdj skdjweri smfsf ksjfsfjjf'
         ],
