@@ -8,30 +8,31 @@ class App extends React.Component{
     }
     handleClick = (item) => {
       const newList = this.state.list.filter(el => {
-          if(el.order === item.order) {
-              return item
+          if(el.order !== item.order) {
+              return;
+              
+          }else{
+              console.log(item)
+              this.setState({list: [...this.state.list[item.order], item.order]})
           }
           return el
       })
       this.setState({list: newList})
+      console.log(this.state.list)
     }
     render(){
-        //console.log(this.state.list)
+        console.log(this.state.list)
         return(
             <>
               <h2>Experience</h2>
               <div className='div'>
               <div>
                 {this.state.list.map(item => {
-                    const {id, company, title, dates, duties, order} = item;
+                    const {id, company} = item;
                     return(
                         <>
                         <button key={id} onClick={() => this.handleClick(item)}>{company}</button>
-                           <h4 >{title}</h4>
-                           <h5>{dates}</h5>
-                           <h5>{duties}</h5>
-                           <h5>{company}</h5>
-                           </>
+                        </>
                     )
                 })}
               </div>
