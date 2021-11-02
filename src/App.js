@@ -5,51 +5,24 @@ import './index.css';
 class App extends React.Component{
     state={
         list: data,
+        value: 0
     }
     handleClick = (item) => {
-      const newList = this.state.list.filter(el => {
-          if(el.order !== item.order) {
-              return;
-              
-          }else{
-              console.log(item)
-              this.setState({list: [...this.state.list[item.order], item.order]})
-          }
-          return el
-      })
-      this.setState({list: newList})
-      console.log(this.state.list)
+       this.setState({...this.state.list, value: item.order})
     }
     render(){
         console.log(this.state.list)
+        console.log(this.state.value)
+        //const value = this.state.value
+        //const {id, title, order, dates, duties, company} = this.state.list[value];
         return(
             <>
-              <h2>Experience</h2>
-              <div className='div'>
-              <div>
-                {this.state.list.map(item => {
-                    const {id, company} = item;
-                    return(
-                        <>
-                        <button key={id} onClick={() => this.handleClick(item)}>{company}</button>
-                        </>
-                    )
-                })}
-              </div>
-              <div>
-                  {this.state.list.map((item) => {
-                      const {id, title, dates, duties, company} = item.order;
-                      return (
-                          <div key={id}>
-                           <h4 >{title}</h4>
-                           <h5>{dates}</h5>
-                           <h5>{duties}</h5>
-                           <h5>{company}</h5>
-                          </div>
-                      )
-                  })}
-              </div>
-              </div>
+               <h3>Experience</h3>
+               {this.state.list.map((item) => {
+                   return(
+                       <button key={item.id} onClick={() => this.handleClick(item)}>{item.company}</button>
+                   )
+               })}
             </>
         )
     }
