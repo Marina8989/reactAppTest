@@ -1,45 +1,40 @@
 const data = [
     {
-        id: 1,
-        category: 'Breakfast',
-        name: 'Item 1',
-        price: '$15.99',
-        desc: 'description # 1'
+        id: 'rwyrwwt',
+        order: 3,
+        title: 'Full Stack Web Developer',
+        dates: 'December 2015 - Present',
+        duties: [
+            'Totdhe fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
+            'Fsdhhf sjfhs dfgj sfjsjsf skfjskj ksjfsfj sjfkj ksjfds kjfsk ksjsj sdfj',
+            'sd jdae jjad akdjakfjut ijeriru surwunfs sfjsdj skdjweri smfsf ksjfsfjjf'
+        ],
+        company: 'TOMMY'
     },
     {
-        id: 2,
-        category: 'Lunch',
-        name: 'Item 2',
-        price: '$25.99',
-        desc: 'description # 2'
+        id: 'lkgdfkg',
+        order: 2,
+        title: 'Full Stack Engineer',
+        dates: 'May 2015 - December 2015',
+        duties: [
+            'Totdhe fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
+            'Fsdhhf sjfhs dfgj sfjsjsf skfjskj ksjfsfj sjfkj ksjfds kjfsk ksjsj sdfj',
+            'sd jdae jjad akdjakfjut ijeriru surwunfs sfjsdj skdjweri smfsf ksjfsfjjf'
+        ],
+        company: 'BIGDROP'
     },
     {
-        id: 3,
-        category: 'Dinner',
-        name: 'Item 3',
-        price: '$45.99',
-        desc: 'description # 3'
-    },
-    {
-        id: 4,
-        category: 'Lunch',
-        name: 'Item 4',
-        price: '$34.99',
-        desc: 'description # 4'
-    },
-     {
-        id: 5,
-        category: 'Dinner',
-        name: 'Item 4',
-        price: '$55.99',
-        desc: 'description # 4'
-    },
-     {
-        id: 6,
-        category: 'Lunch',
-        name: 'Item 6',
-        price: '$16.99',
-        desc: 'description # 6'
+        id: 'ueiyue',
+        order: 1,
+        title: 'Engineering Intern',
+        dates: 'May 2014 - September 2015',
+        duties: [
+            'Totdhe fsjhfshn sjdjfh fskffhs sdfssh jshfshf fshshs fsdhfsfsj fsff',
+            'Fsdhhf sjfhs dfgj sfjsjsf skfjskj ksjfsfj sjfkj ksjfds kjfsk ksjsj sdfj',
+            'sd jdae jjad akdjakfjut ijeriru surwunfs sfjsdj skdjweri smfsf ksjfsfjjf'
+        ],
+        company: 'CUKER'
     },
 ]
-export default data;
+
+export default data
